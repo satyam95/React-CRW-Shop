@@ -11,12 +11,12 @@ const CollectionPreview = ({title, items}) =>(
             {title.toUpperCase()}
         </h1>
         <div className='preview'>
-            {items
+            { items
                .filter((item, idx) => idx < 4)
-               .map(({ id, ...otherItemProps }) => (
-                 <CollectionItem key={id} {...otherItemProps}></CollectionItem>
+               .map(item => (
+                 <CollectionItem key={item.id} item={item}></CollectionItem>
                ))
-            }
+               }
         </div>
     </div>
 );
